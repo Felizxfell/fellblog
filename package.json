@@ -15,6 +15,7 @@
     "@astrojs/rss": "^4.0.1",
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/tilt-neon": "^5.0.3",
     "astro": "^4.0.7",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.3"

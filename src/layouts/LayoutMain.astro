@@ -1,16 +1,17 @@
 ---
+import "@fontsource-variable/tilt-neon";
+
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
-<!doctype html>
 <html lang="es">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
 
-  <body>
+  <body class="bg-shadow text-white">
     <Header />
     <main>
       <slot />
