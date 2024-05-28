@@ -1,0 +1,61 @@
+---
+import Cartoon from "@components/Cartoon.astro";
+import IconTwitter from "@svgs/IconTwitter.svg";
+import IconLinkedIn from "@svgs/IconLinkedIn.svg";
+import IconGitHub from "@svgs/IconGitHub.svg";
+import IconEmail from "@svgs/IconEmail.svg";
+import { Image } from "astro:assets";
+import CardShadow from "./CardShadow.astro";
+---
+
+<section
+  class="mb-5 flex justify-center max-md:w-full max-md:col-span-2"
+  aria-label="imagen-user"
+>
+  <div
+    class="flex justify-center w-4/5 rounded-full bg-gradient-to-bl from-blue-aqua from-20% to-green-pistache"
+  >
+    <Cartoon />
+  </div>
+</section>
+<section
+  class="grid content-center mb-5 md:pr-3 max-md:mt-8"
+  aria-label="me-info"
+>
+  <CardShadow>
+    <p class="text-blue-sky">
+      Hola mi nombre es Felipe de Jesús soy un joven mexicano que se apasiona
+      por el Desarrollo Web con más de 4 años de experiencia.
+    </p>
+    <p class="mt-4">
+      Disfruto creando aplicaciones web 🌐, diseñando bases de datos ✍, diseño
+      de páginas 📓 y el análisis de software 🔍.
+    </p>
+    <p class="mt-4 text-blue-aqua">
+      Todo lo que tenga que ver con el frontend y backend me acomoda a la
+      perfección ya que soy fullstack 💻.
+    </p>
+  </CardShadow>
+  <ul class="list-none mt-4 ml-4 flex gap-4">
+    <li>
+      <a href="https://twitter.com/felizxhgf" target="blank">
+        <Image src={IconTwitter} width={26} alt="IconTwitter" />
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/fel-isidro-98b8aa225" target="blank">
+        <Image src={IconLinkedIn} width={26} alt="IconLinkedIn" />
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/Felizxfell" target="blank">
+        <Image src={IconGitHub} width={26} alt="IconGitHub" />
+      </a>
+    </li>
+    <li>
+      <a href="mailto:felizxhgf@gmail.com" target="blank">
+        <Image src={IconEmail} width={26} alt="IconEmail" />
+      </a>
+    </li>
+  </ul>
+</section>

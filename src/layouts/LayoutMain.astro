@@ -1,9 +1,7 @@
 ---
-import "@fontsource-variable/tilt-neon";
-
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 ---
 
 <html lang="es">
@@ -11,10 +9,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
 
-  <body class="bg-shadow text-white">
+  <body class="bg-shadow text-white font-tilt-neon">
     <Header />
-    <main>
-      <slot />
+    <main class="max-h-screen">
+      <div
+        class="my-7 mx-2 p-5 lg:mx-32 xl:mx-36 2xl:mx-96 rounded-lg text-emerald-400"
+      >
+        <div class="mt-5 grid grid-cols-2 max-md:grid-cols-1">
+          <slot />
+        </div>
+      </div>
     </main>
   </body>
 </html>

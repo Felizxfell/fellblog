@@ -2,6 +2,9 @@
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    fontFamily: {
+      "tilt-neon": ["TiltNeon", "Arial"],
+    },
     extend: {
       colors: {
         shadow: "#1a1a1a",
