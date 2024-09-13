@@ -1,10 +1,16 @@
 ---
-import MyInfo from "@components/MyInfo.astro";
+import Info from "@/components/Info.astro";
 import LayoutMain from "@/layouts/LayoutMain.astro";
-import MySkills from "@/components/MySkills.astro";
+import Skills from "@/components/Skills.astro";
+import Experencie from "@/components/Experencie.astro";
+import Projects from "@/components/Projects.astro";
 ---
 
 <LayoutMain>
-  <MyInfo />
-  <MySkills />
+  <div class="mt-5 grid grid-cols-2 max-md:grid-cols-1">
+    <Info />
+    <Skills />
+    <Experencie />
+    <Projects />
+  </div>
 </LayoutMain>

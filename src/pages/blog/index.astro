@@ -1,111 +1,80 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+import { getCollection } from "astro:content";
+import LayoutMain from "@/layouts/LayoutMain.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+const Capitalize = (text: string) => {
+  const phrases = text.split("-");
+
+  let newText = "";
+  phrases.forEach((word) => {
+    const firstLetter = word.charAt(0).toUpperCase();
+
+    const remainingLetters = word.substring(1);
+
+    newText += `${firstLetter}${remainingLetters} `;
+  });
+
+  return newText.trim();
+};
+
+const posts = await getCollection("blog");
+// .sort(
+// (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+// );
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+<LayoutMain title="Blog">
+  <article class="md:px-12">
+    <div
+      class="my-8 divide-x-[1px] divide-slate-500"
+      aria-label="list of blogs"
+    >
+      <section>
+        <h2 class="text-2xl font-bold text-blue-aqua md:w-3/4">
+          Writing on software design, company building, and the aerospace
+          industry.
+        </h2>
+        <p class="mt-5 mb-8 md:w-3/4">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel neque,
+          beatae laborum quaerat, nobis soluta nostrum autem possimus explicabo,
+          labore officiis doloremque nam hic itaque accusantium dolores
+          architecto voluptas reprehenderit!
+        </p>
+      </section>
+      <section class="grid grid-cols-2 place-content-start max-md:grid-cols-1">
+        {
+          posts.map((post) => (
+            <div class="pt-5 mb-5 md:w-80 border-2 border-r-white">
+              <p class="max-md:ml-3 ml-5 text-sm text-emerald-600">
+                {/* <FormattedDate date={post.data.pubDate} /> */}
+                {post.data.pubDate}
+              </p>
+            </div>
+            <div class="max-md:ml-3 p-5 grid gap-2 ml-1 mb-5 rounded-lg text-left hover:bg-zinc-800 border-2 border-r-white">
+              <strong class="text-blue-aqua">
+                {Capitalize(post.data.title)}
+              </strong>
+              <p class="text-blue-sky mb-5">{post.data.description}</p>
+              <a
+                class="text-white w-fit flex justify-stretch hover:text-emerald-400"
+                href={`/blog/${post.slug}/`}
+              >
+                Read posts <span class="mt-[2px]"> </span>
+              </a>
+            </div>
+          ))
+        }
+      </section>
+    </div>
+  </article>
+</LayoutMain>
+
+<style>
+  .gridBlogs {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 30%);
+    grid-template-columns: 20rem 70%;
+}
+</style>

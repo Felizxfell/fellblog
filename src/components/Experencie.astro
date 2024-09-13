@@ -1,0 +1,109 @@
+---
+import LogoKachi from "@images/logo_kachimushi.png";
+import LogoGS from "@svgs/LogoGS.svg";
+import { Image } from "astro:assets";
+---
+
+<section class="p-4 col-span-2 my-5" aria-label="experencie">
+  <h2 class="mb-5 font-extrabold text-3xl text-center">Experiencia</h2>
+  <div
+    class="grid grid-cols-2 gap-5 max-md:grid-cols-1 text-slate-200
+      [&>*]:p-2 [&>*]:rounded-md [&>*]:bg-green-sheet
+      [&>div>*]:list-disc
+      [&>div>ul>*]:mx-4"
+  >
+    <div class="h-fit [&>*]:p-2 [&>*]:rounded-2xl grid gap-2">
+      <p class="text-black bg-slate-200 w-fit">Kachimuchi, 02-2020 - 01-2023</p>
+      <picture class="flex justify-center">
+        <Image
+          src={LogoKachi}
+          width={200}
+          height={200}
+          alt="kachimushi"
+          class="p-2 rounded-lg bg-white"
+        />
+      </picture>
+      <ul
+        class="grid gap-4 text-sm leading-5 bg-slate-800 [&>*:nth-child(even)]:text-emerald-400"
+      >
+        <li>
+          Realice el mantenimiento del sistema de facturación electrónica
+          Libellum. Hice la actualización a la versión CFDI 4.0 en ASP Net y Net
+          Framework con consumo de servicios de facturación a través de
+          servicios Web SOAP y API.
+        </li>
+        <li>
+          Creé el Micro Servicio que automatiza los procesos de facturas
+          globales usando el concepto de recursividad en .Net Core. consumiendo
+          Web Services. Se optimizó la subida de datos a la mitad de tiempo.
+        </li>
+        <li>
+          Hice el análisis y diseño de base de datos con Postgresql y diseño de
+          software para Libellum suite usando Laravel con React js y
+          Tailwindcss.
+        </li>
+        <li>
+          Contribuí en el desarrollo de una aplicación web sobre Comandas de un
+          restaurante para realizar pedidos de productos, envío de mensajes,
+          orden de compra, y pago de productos.
+        </li>
+        <li>
+          Creé la aplicación web Libellum Dashboard de monitoreo de facturas
+          realizadas durante cierto tiempo en las sucursales de una franquicia.
+        </li>
+        <li>
+          Capacitación de 2-3 desarrolladores para el uso de framework Laravel y
+          base de datos MySQL y Postgresql.
+        </li>
+      </ul>
+    </div>
+    <div class="h-fit [&>*]:p-2 [&>*]:rounded-2xl grid gap-2 bg-gradient-to-r">
+      <p class="text-black bg-slate-200 w-fit">
+        Grupo Salinas, 02-2023 - Actualidad
+      </p>
+      <picture class="flex justify-center">
+        <Image
+          src={LogoGS}
+          alt="GupoSalinas"
+          class="p-2 rounded-lg bg-white"
+          width={166}
+          height={166}
+        />
+      </picture>
+      <ul
+        class="grid gap-4 text-sm leading-5 bg-slate-800 [&>*:nth-child(even)]:text-emerald-400"
+      >
+        <li>
+          Mantenimiento del sistema ADA, creando servicios en .Net, optimizando
+          storages procedures en SQL Server, actualización y refactorizando de
+          frontend.
+        </li>
+        <li>
+          Certificación de aplicaciones web, corrigiendo bugs, resolviendo
+          vulnerabilidades, añadiendo seguridad, actualizando código y
+          librerías.
+        </li>
+        <li>
+          Creación de servicios API con .Net consumiendo servicios externos
+          usando patrones de diseño para optimizar el uso de meroria y el
+          proceso de consulta de datos en el módulo de inventarios.
+        </li>
+        <li>
+          Mantenimiento de Sitios Telecom web usando Typescript, Angularjs y
+          .Net, corrigiendo páginas basadas en componentes, agregando tipado,
+          uso correcto de las peticiones fetch, añadiendo estructura de
+          componentización.
+        </li>
+        <li>
+          Optimización de Store Procedure con SQL Server mejorando procesos de
+          recolección de datos usando Funciones, Vistas, Cursores, Subconsultas,
+          unión de tablas y condiciones.
+        </li>
+        <li>
+          Configuración de IIS en Windows Server para entornos de desarrollo y
+          pruebas.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

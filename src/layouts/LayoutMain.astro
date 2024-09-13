@@ -2,11 +2,18 @@
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
 
 <html lang="es">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={title} description={description} />
   </head>
 
   <body class="bg-shadow text-white font-tilt-neon">
@@ -15,9 +22,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
       <div
         class="my-7 mx-2 p-5 lg:mx-32 xl:mx-36 2xl:mx-96 rounded-lg text-emerald-400"
       >
-        <div class="mt-5 grid grid-cols-2 max-md:grid-cols-1">
-          <slot />
-        </div>
+        <slot />
       </div>
     </main>
   </body>

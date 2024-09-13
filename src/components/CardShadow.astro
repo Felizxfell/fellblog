@@ -1,4 +1,12 @@
-<div class="p-2 rounded-md bg-slate-700">
+---
+interface Props {
+  classList?: string;
+}
+
+const { classList = "" } = Astro.props;
+---
+
+<div class="p-2 rounded-md bg-slate-700" class:list={classList}>
   <div class="p-4 rounded-2xl bg-shadow">
     <slot />
   </div>

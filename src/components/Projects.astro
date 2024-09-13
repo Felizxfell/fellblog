@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+
+import facturador from "@images/facturador.webp";
+import dashboard from "@images/dash-libellum.webp";
+import CardShadow from "./CardShadow.astro";
+---
+
+<section class="mb-5 p-2 col-span-2" aria-label="proyects">
+  <h2 class="font-extrabold text-3xl mt-8 mb-5 max-md:text-center">
+    Proyectos
+  </h2>
+  <CardShadow classList="md:w-2/3">
+    <p class="text-blue-aqua">
+      Aquí hay algunos de los proyectos en los que he trabajado a lo largo de mi
+      carrera profesional.
+    </p>
+  </CardShadow>
+  <div
+    class="grid gap-6 grid-cols-3 mt-8 max-md:grid-cols-1 text-sm leading-5 text-slate-200
+        [&>*]:p-4 [&>*]:rounded-md [&>*]:grid [&>*]:justify-items-center [&>*]:h-fit
+        [&>*]:bg-green-pistache
+        [&>div>picture]:rounded-md [&>div>picture]:flex [&>div>picture]:justify-center
+        [&>div>p]:mt-5 [&>div>p]:p-2 [&>div>p]:rounded-2xl [&>div>p]:bg-slate-800"
+  >
+    <div
+      class="ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300"
+    >
+      <picture>
+        <Image src={facturador} alt="facturador" width={300} height={150} />
+      </picture>
+      <p>
+        Realice la actualización de todo el sistema de Libellum CFDI a la nueva
+        versión de timbrado del SAT 4.0. Implemente todas las nuevas reglas y
+        estuve a cargo del mantenimiento del mismo solventando cualquier tipo de
+        bug o fallo y realizando implementación de servicios externos.
+      </p>
+    </div>
+    <div
+      class="ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300"
+    >
+      <picture>
+        <Image src={dashboard} alt="dashboard" width={300} height={150} />
+      </picture>
+      <p>
+        Desarrolle el proyecto Libellum Dashboard el cual muestra toda la
+        actividad de facturación y venta de todas las sucursales de una
+        franquicia. Identifica por colores de un semáforo el flujo de trabajo de
+        una sucursal y detecta anomalías.
+      </p>
+    </div>
+  </div>
+</section>
