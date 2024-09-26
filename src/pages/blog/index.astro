@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import LayoutMain from "@/layouts/LayoutMain.astro";
+import IconChevronRight from "@icons/IconChevronRight.astro"
 import FormattedDate from "@/components/FormattedDate.astro";
 
 const Capitalize = (text: string) => {
@@ -42,39 +43,30 @@ const posts = await getCollection("blog");
           architecto voluptas reprehenderit!
         </p>
       </section>
-      <section class="grid grid-cols-2 place-content-start max-md:grid-cols-1">
+      <section class="grid grid-cols-5 max-md:grid-cols-1">
         {
           posts.map((post) => (
-            <div class="pt-5 mb-5 md:w-80 border-2 border-r-white">
+            <div class="col-span-1 pt-5 mb-5">
               <p class="max-md:ml-3 ml-5 text-sm text-emerald-600">
                 {/* <FormattedDate date={post.data.pubDate} /> */}
                 {post.data.pubDate}
               </p>
             </div>
-            <div class="max-md:ml-3 p-5 grid gap-2 ml-1 mb-5 rounded-lg text-left hover:bg-zinc-800 border-2 border-r-white">
+            <div class="col-span-4 max-md:ml-3 p-5 grid gap-2 ml-1 mb-5 rounded-lg text-left hover:bg-zinc-800">
               <strong class="text-blue-aqua">
                 {Capitalize(post.data.title)}
               </strong>
               <p class="text-blue-sky mb-5">{post.data.description}</p>
               <a
-                class="text-white w-fit flex justify-stretch hover:text-emerald-400"
+                class="text-white w-fit flex text-center hover:text-emerald-400"
                 href={`/blog/${post.slug}/`}
               >
-                Read posts <span class="mt-[2px]"> </span>
+                Read posts <IconChevronRight />
               </a>
             </div>
           ))
         }
       </section>
     </div>
-  </article>
+  </article>  
 </LayoutMain>
-
-<style>
-  .gridBlogs {
-    width: 100%;
-    display: grid;
-    grid-template-rows: repeat(3, 30%);
-    grid-template-columns: 20rem 70%;
-}
-</style>
