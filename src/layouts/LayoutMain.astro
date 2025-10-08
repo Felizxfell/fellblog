@@ -1,6 +1,6 @@
 ---
 import BaseHead from "@components/BaseHead.astro";
-import Header from "@components/Header.astro";
+import Navbar from "@components/Navbar.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 import "../styles/global.css";
 interface Props {
@@ -17,7 +17,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
   </head>
 
   <body class="bg-shadow text-white font-tilt-neon">
-    <Header />
+    <Navbar />
     <main class="max-h-screen">
       <div
         class="my-7 mx-2 p-5 lg:mx-32 xl:mx-36 2xl:mx-96 rounded-lg text-emerald-400"

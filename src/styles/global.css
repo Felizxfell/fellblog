@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@midudev/tailwind-animations";
 
 @font-face {
   font-family: "TiltNeon";
@@ -6,4 +7,15 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+@theme {
+  --font-tilt-neon: "TiltNeon", Arial, sans-serif;
+
+  --color-shadow: #1a1a1a;
+  --color-lemon: #b2e243;
+  --color-green-sheet: #68d981;
+  --color-green-pistache: #34d399;
+  --color-blue-sky: #37d1d9;
+  --color-blue-aqua: #4ba9fa;
 }
