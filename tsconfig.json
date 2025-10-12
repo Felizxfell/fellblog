@@ -10,5 +10,6 @@
       "@images/*": ["src/assets/images/*"],
       "@svgs/*": ["src/assets/svgs/*"],
     }
-  }
+  },
+  "exclude": ["src/pages/about.astro"]
 }
