@@ -15,5 +15,13 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: "cloudflare",
+  }),
+
+  image: {
+    service: {
+      entrypoint: "astro/assets/services/noop",
+    },
+  },
 });
