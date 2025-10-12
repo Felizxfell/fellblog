@@ -106,7 +106,7 @@ import IconMark from "@icons/IconMark.astro";
     menuWeb?.classList.remove("opacity-0");
   });
 
-  menuMobile?.addEventListener("animationend", (e) => {
+  menuMobile?.addEventListener("animationend", () => {
     if (menuMobile.classList.contains(animationOut)) {
       menuMobile.classList.add("hidden");
       menuMobile.classList.remove(animationOut);
