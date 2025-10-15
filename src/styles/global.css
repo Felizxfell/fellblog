@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "@midudev/tailwind-animations";
+@plugin "@tailwindcss/typography";
 
 @font-face {
   font-family: "TiltNeon";
@@ -18,4 +19,56 @@
   --color-green-pistache: #34d399;
   --color-blue-sky: #37d1d9;
   --color-blue-aqua: #4ba9fa;
+}
+
+/* Estilos personalizados para prose */
+.prose {
+  --tw-prose-body: var(--color-blue-sky);
+  --tw-prose-headings: var(--color-lemon);
+  --tw-prose-lead: var(--color-blue-sky);
+  --tw-prose-links: rgb(226 232 240);
+  --tw-prose-bold: rgb(52 211 153);
+  --tw-prose-counters: var(--color-blue-aqua);
+  --tw-prose-bullets: var(--color-blue-aqua);
+  --tw-prose-hr: var(--color-slate-400);
+  --tw-prose-quotes: rgb(5 150 105);
+  --tw-prose-quote-borders: rgb(11, 14, 19);
+  --tw-prose-captions: rgb(148 163 184);
+  --tw-prose-code: rgb(52 211 153);
+  --tw-prose-pre-code: rgb(226 232 240);
+  --tw-prose-pre-bg: rgb(30 41 59);
+  --tw-prose-th-borders: rgb(148 163 184);
+  --tw-prose-td-borders: rgb(226 232 240);
+}
+
+.prose h1 {
+  color: var(--color-lemon);
+}
+
+.prose h2 {
+  color: var(--color-blue-aqua);
+}
+
+.prose h3 {
+  color: var(--color-green-pistache);
+}
+
+.prose p {
+  line-height: 1.5;
+}
+
+.prose blockquote {
+  color: rgb(5 150 105);
+}
+
+.prose strong {
+  color: rgb(52 211 153);
+}
+
+.prose a {
+  color: rgb(226 232 240);
+}
+
+.prose em {
+  color: rgb(52 211 153);
 }

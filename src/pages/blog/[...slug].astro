@@ -1,4 +1,7 @@
 ---
+import ChevronLeft from "@/assets/icons/ChevronLeft.astro";
+import HeaderLink from "@/components/HeaderLink.astro";
+import LayoutMain from "@/layouts/LayoutMain.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -14,4 +17,13 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Content />
+<LayoutMain title={post.data.title}>
+  <article class="flex justify-center" aria-label="list of blogs">
+    <section class="prose prose-zinc max-w-none">
+      <HeaderLink href="/blog" class="flex gap-1">
+        <span class="mt-[3px]"> <ChevronLeft /> </span> Back To Posts
+      </HeaderLink>
+      <Content />
+    </section>
+  </article>
+</LayoutMain>
